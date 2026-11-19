@@ -135,6 +135,20 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Separador institucional (macchiato) */
+.home-divider {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 28px;
+}
+
+.home-divider img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
 /* Metadatos del curso: barra compacta <dl> */
 .home-meta {
   display: grid;

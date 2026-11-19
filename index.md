@@ -48,6 +48,10 @@ features:
     link_text: Guía de contribución
 ---
 
+<div class="home-divider" aria-hidden="true">
+  <img src="{{ '/assets/images/macchiato.png' | relative_url }}" width="420" alt=""/>
+</div>
+
 <dl class="home-meta" aria-label="Datos del curso y entrega">
   <div class="home-meta-item">
     <dt>Programa</dt>

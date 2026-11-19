@@ -1,5 +1,8 @@
 - title: Proyecto
   collection: guides
 
+- title: Propuesta del Proyecto
+  collection: propuesta
+
 - title: Arquitectura (ADR)
   collection: adr

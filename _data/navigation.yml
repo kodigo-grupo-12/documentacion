@@ -2,6 +2,10 @@
   url: /proyecto/
   collections: [guides]
 
+- title: Propuesta
+  url: /propuesta/01-introduccion/
+  collections: [propuesta]
+
 - title: ADRs
   url: /adr/indice/
   collections: [adr]

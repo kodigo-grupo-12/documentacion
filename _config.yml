@@ -12,6 +12,9 @@ collections:
   guides:
     output: true
     permalink: "/:name/"
+  propuesta:
+    output: true
+    permalink: "/propuesta/:name/"
   adr:
     output: true
     permalink: "/adr/:name/"

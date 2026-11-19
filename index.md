@@ -1,57 +1,85 @@
 ---
 layout: home
 title: Inicio
-description: Base de conocimiento del Grupo 12 — AI For Devs Jr. 5, Kodigo. Formamos talento tech en El Salvador y Latinoamérica.
+description: Documentación técnica del Grupo 12 (AI For Devs Jr. 5, Kodigo) para la aplicación Android de control de gastos e ingresos con agente conversacional en RubyLLM.
 
 hero:
-  name: Kodigo — Grupo 12
-  text: AI For Devs Jr. 5
-  tagline: Formamos talento tech en El Salvador y Latinoamérica.
-  image:
-    src: /assets/images/kodigo_avatar.png
-    alt: Kodigo Grupo 12
+  name: Control de gastos e ingresos
+  text: App Android + agente RubyLLM
+  tagline: Aplicación móvil Android para llevar el control personal de gastos e ingresos, integrada con un agente conversacional construido con RubyLLM. Documentación del Grupo 12 en AI For Devs Jr. 5 de Kodigo.
   actions:
     - theme: brand
-      text: Leer propuesta del proyecto →
+      text: Leer la propuesta
       link: /propuesta/01-introduccion/
     - theme: alt
-      text: Decisiones (ADRs)
-      link: /adr/indice/
-    - theme: alt
-      text: Información general
-      link: /proyecto/
-    - theme: alt
-      text: Organización en GitHub
-      link: https://github.com/kodigo-grupo-12
+      text: Cómo contribuir
+      link: /como-contribuir/
 
 features:
-  - icon: 🎯
-    title: Propuesta del Proyecto
-    details: Introducción, problema por solucionar, justificación, objetivos, alcances y límites de la app Android + RubyLLM.
+  - icon:
+      light: /assets/icons/file-text-light.svg
+      dark: /assets/icons/file-text-dark.svg
+      alt: ""
+      wrap: true
+    title: Propuesta del proyecto
+    details: Estructura en cinco secciones —introducción, problema, justificación, objetivos, alcances y límites— preparada para redactar en paralelo.
     link: /propuesta/01-introduccion/
-    link_text: Comenzar lectura
-  - icon: 📐
-    title: Decisiones de Arquitectura (ADR)
-    details: Registro versionado del contexto, alternativas evaluadas y decisiones técnicas del equipo.
+    link_text: Ir a la propuesta
+  - icon:
+      light: /assets/icons/compass-light.svg
+      dark: /assets/icons/compass-dark.svg
+      alt: ""
+      wrap: true
+    title: Decisiones de arquitectura (ADR)
+    details: Registro versionado del contexto, alternativas evaluadas y consecuencias técnicas. Incluye la plantilla base ADR-0000 lista para nuevas decisiones.
     link: /adr/indice/
-    link_text: Explorar ADRs
-  - icon: ⚡
-    title: Flujo de trabajo en equipo
-    details: Búsqueda instantánea, modo claro/oscuro nativo y colaboración mediante ramas y Pull Requests.
+    link_text: Ver índice de ADRs
+  - icon:
+      light: /assets/icons/git-pr-light.svg
+      dark: /assets/icons/git-pr-dark.svg
+      alt: ""
+      wrap: true
+    title: Flujo de trabajo del equipo
+    details: Entorno unificado con mise (Ruby 3.4), edición mediante ramas y Pull Requests hacia main, con despliegue automático en GitHub Pages.
     link: /como-contribuir/
-    link_text: Cómo contribuir
+    link_text: Guía de contribución
 ---
 
-<p align="center">
-  <img src="{{ '/assets/images/macchiato.png' | relative_url }}" width="420" alt="Separador"/>
-</p>
+<dl class="home-meta" aria-label="Datos del curso y entrega">
+  <div class="home-meta-item">
+    <dt>Programa</dt>
+    <dd>AI For Devs Jr. 5 · Kodigo</dd>
+  </div>
+  <div class="home-meta-item">
+    <dt>Equipo</dt>
+    <dd>Grupo 12 (<code>kodigo-grupo-12</code>)</dd>
+  </div>
+  <div class="home-meta-item">
+    <dt>Instructor</dt>
+    <dd>Ing. Ronald Mejía</dd>
+  </div>
+  <div class="home-meta-item">
+    <dt>Fecha de entrega</dt>
+    <dd>Domingo, 29 de noviembre de 2026 — 23:59</dd>
+  </div>
+</dl>
 
-## Información del curso
-
-| Campo | Detalle |
-| :--- | :--- |
-| **Institución** | Kodigo — *Formamos talento tech en El Salvador y Latinoamérica* |
-| **Programa** | AI For Devs Jr. 5 |
-| **Equipo** | Grupo 12 (`kodigo-grupo-12`) |
-| **Instructor** | Ing. Ronald Mejía |
-| **Fecha de entrega** | Domingo, 29 de noviembre de 2026 — 23:59 |
+<section class="home-status" aria-labelledby="home-status-heading">
+  <div class="home-status-header">
+    <h2 id="home-status-heading" class="home-status-title">Estado actual de la documentación</h2>
+  </div>
+  <ul class="home-status-list">
+    <li>
+      <span class="home-status-badge">ADR-0000</span>
+      <a href="{{ '/adr/0000-plantilla-adr/' | relative_url }}">Plantilla de ADR</a>
+      <span>Estado: Plantilla</span>
+      <span class="home-status-date">2026-11-19</span>
+    </li>
+    <li>
+      <span class="home-status-badge">Propuesta</span>
+      <a href="{{ '/propuesta/01-introduccion/' | relative_url }}">5 secciones base en <code>_propuesta/</code></a>
+      <span>Listas para redacción</span>
+      <span class="home-status-date">2026-11-19</span>
+    </li>
+  </ul>
+</section>

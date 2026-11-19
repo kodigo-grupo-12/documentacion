@@ -28,6 +28,29 @@ git clone https://github.com/kodigo-grupo-12/.github.git
 
 *(Si usas SSH, sustituye `https://github.com/` por `git@github.com:`.)*
 
+## Requisitos previos (Ruby y Bundler)
+
+Para previsualizar el sitio en tu computadora necesitas **Ruby 3.3+** y **Bundler**:
+
+- **Windows:** descarga **Ruby+Devkit (x64)** desde [RubyInstaller for Windows](https://rubyinstaller.org/downloads/) y sigue el asistente (acepta instalar MSYS2 al final).
+- **macOS:** sigue la [guía oficial de Jekyll para macOS](https://jekyllrb.com/docs/installation/macos/) (recomendado vía Homebrew + `chruby` o `mise`).
+- **Linux:** sigue la [guía oficial de Jekyll para Ubuntu/Linux](https://jekyllrb.com/docs/installation/ubuntu/) o la [guía oficial de instalación de Ruby](https://www.ruby-lang.org/es/documentation/installation/).
+
+Verifica que todo quedó listo ejecutando:
+
+```bash
+ruby -v
+bundle -v
+```
+
+Si `bundle` no aparece instalado, instálalo con:
+
+```bash
+gem install bundler
+```
+
+> **Tip:** Si solo necesitas redactar o corregir texto en `_propuesta/` o `_adr/` y aún no tienes Ruby instalado, también puedes editar el archivo directamente desde la web de GitHub creando una rama y Pull Request.
+
 ## Ejecutar la documentación en local
 
 1. Entra a la carpeta del repositorio clonado:

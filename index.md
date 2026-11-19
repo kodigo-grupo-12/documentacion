@@ -4,9 +4,12 @@ title: Inicio
 description: Documentación técnica del Grupo 12 (AI For Devs Jr. 5, Kodigo) para la aplicación Android de control de gastos e ingresos con agente conversacional en RubyLLM.
 
 hero:
-  name: Control de gastos e ingresos
-  text: App Android + agente RubyLLM
-  tagline: Aplicación móvil Android para llevar el control personal de gastos e ingresos, integrada con un agente conversacional construido con RubyLLM. Documentación del Grupo 12 en AI For Devs Jr. 5 de Kodigo.
+  name: Kodigo — Grupo 12
+  text: AI For Devs Jr. 5
+  tagline: Aplicación móvil Android para llevar el control personal de gastos e ingresos, integrada con un agente conversacional construido con RubyLLM.
+  image:
+    src: /assets/images/kodigo_k_mark.png
+    alt: Ícono de Kodigo
   actions:
     - theme: brand
       text: Leer la propuesta

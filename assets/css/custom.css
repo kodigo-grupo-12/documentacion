@@ -73,9 +73,18 @@
   --vp-c-brand-soft: rgba(45, 212, 184, 0.14);
 }
 
-/* Hero sobrio alineado a la izquierda */
+/* Hero sobrio sin degradado ni resplandor */
 .VPHome .VPHero {
   padding-bottom: 40px;
+}
+
+.VPHome .VPHero .image-bg {
+  display: none;
+}
+
+.VPHome .VPHero .image-src {
+  max-width: 210px;
+  max-height: 210px;
 }
 
 .VPHome .VPHero .name.clip {
@@ -88,8 +97,8 @@
 }
 
 .VPHome .VPHero .text {
-  color: var(--vp-c-text-2);
-  font-weight: 500;
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
@@ -176,13 +185,14 @@ button:focus-visible {
   margin-bottom: 14px;
 }
 
+.vp-doc .home-status-title,
 .home-status-title {
   margin: 0;
   font-size: 15px;
   font-weight: 600;
   color: var(--vp-c-text-1);
-  border: 0;
-  padding: 0;
+  border-top: 0;
+  padding-top: 0;
 }
 
 .home-status-list {

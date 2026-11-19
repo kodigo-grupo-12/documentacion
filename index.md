@@ -12,26 +12,29 @@ hero:
     alt: Kodigo Grupo 12
   actions:
     - theme: brand
-      text: Ver proyecto
-      link: /proyecto/
+      text: Leer propuesta del proyecto →
+      link: /propuesta/01-introduccion/
     - theme: alt
       text: Decisiones (ADRs)
       link: /adr/indice/
+    - theme: alt
+      text: Información general
+      link: /proyecto/
     - theme: alt
       text: Organización en GitHub
       link: https://github.com/kodigo-grupo-12
 
 features:
+  - icon: 🎯
+    title: Propuesta del Proyecto
+    details: Introducción, problema por solucionar, justificación, objetivos, alcances y límites de la app Android + RubyLLM.
+    link: /propuesta/01-introduccion/
+    link_text: Comenzar lectura
   - icon: 📐
     title: Decisiones de Arquitectura (ADR)
     details: Registro versionado del contexto, alternativas evaluadas y decisiones técnicas del equipo.
     link: /adr/indice/
     link_text: Explorar ADRs
-  - icon: 📄
-    title: Base lista para documentar
-    details: Estructura limpia preparada para crecer con especificaciones, diagramas y guías conforme avance el código.
-    link: /proyecto/
-    link_text: Información general
   - icon: ⚡
     title: Flujo de trabajo en equipo
     details: Búsqueda instantánea, modo claro/oscuro nativo y colaboración mediante ramas y Pull Requests.

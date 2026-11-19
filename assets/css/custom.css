@@ -1,0 +1,202 @@
+/* Tipografía autoalojada: IBM Plex Sans + IBM Plex Mono */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-mono-500.woff2") format("woff2");
+}
+
+/* Paleta de acento único (verde azulado Kodigo, contraste AA) y tokens base */
+:root {
+  --vp-font-family-base: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --vp-font-family-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Contraste en modo claro (#ffffff): #007A67 = 5.32:1 (AA), #006656 = 6.88:1 */
+  --vp-c-brand-1: #007a67;
+  --vp-c-brand-2: #006656;
+  --vp-c-brand-3: #007a67;
+  --vp-c-brand-soft: rgba(0, 122, 103, 0.12);
+
+  /* Hero sin degradado ni resplandor por defecto */
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+  --vp-home-hero-name-background: none;
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+}
+
+.dark {
+  /* Contraste en modo oscuro (#1b1b1f): #2DD4B8 = 10.4:1; botón #0D8572 con texto blanco = 4.65:1 (AA) */
+  --vp-c-brand-1: #2dd4b8;
+  --vp-c-brand-2: #14b89e;
+  --vp-c-brand-3: #0d8572;
+  --vp-c-brand-soft: rgba(45, 212, 184, 0.14);
+}
+
+/* Hero sobrio sin degradado ni resplandor */
+.VPHome .VPHero {
+  padding-bottom: 40px;
+}
+
+.VPHome .VPHero .image-bg {
+  display: none;
+}
+
+.VPHome .VPHero .image-src {
+  max-width: 210px;
+  max-height: 210px;
+}
+
+.VPHome .VPHero .name.clip {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: var(--vp-c-text-1);
+  color: var(--vp-c-text-1);
+  letter-spacing: -0.025em;
+}
+
+.VPHome .VPHero .text {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.VPHome .VPHero .tagline {
+  max-width: 640px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Radios moderados y consistentes en botones y tarjetas */
+.VPButton.medium {
+  border-radius: 6px;
+}
+
+.VPFeature {
+  border-radius: 8px;
+}
+
+.VPFeature .icon {
+  border-radius: 6px;
+  background-color: var(--vp-c-brand-soft);
+}
+
+.VPFeature .icon img,
+.VPFeature .icon-image {
+  width: 22px;
+  height: 22px;
+}
+
+/* Foco visible accesible */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+/* Separador institucional (macchiato) */
+.home-divider {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 28px;
+}
+
+.home-divider img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+/* Metadatos del curso: barra compacta <dl> */
+.home-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px 24px;
+  margin: 0 0 36px;
+  padding: 18px 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.home-meta-item {
+  margin: 0;
+}
+
+.home-meta dt {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-3);
+  margin: 0 0 4px;
+}
+
+.home-meta dd {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Responsive: tablet y móvil (375px+) */
+@media (max-width: 959px) {
+  .home-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .home-meta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .VPHome .VPHero .tagline {
+    font-size: 16px;
+  }
+}

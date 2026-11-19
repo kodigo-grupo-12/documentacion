@@ -45,6 +45,8 @@ jekyll_vitepress:
   labels:
     appearance_menu: "Apariencia"
     switch_to_dark: "Cambiar a modo oscuro"
+  typography:
+    google_fonts_url: false
   syntax:
     light_theme: github
     dark_theme: github.dark

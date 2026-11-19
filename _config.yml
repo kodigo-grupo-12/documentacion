@@ -1,0 +1,54 @@
+title: "Kodigo — Grupo 12"
+description: "Documentación técnica y decisiones de arquitectura (ADRs) del Grupo 12 — AI For Devs Jr. 5, Kodigo."
+url: "https://kodigo-grupo-12.github.io"
+baseurl: "/documentacion"
+lang: es-SV
+
+theme: jekyll-vitepress-theme
+plugins:
+  - jekyll-vitepress-theme
+
+collections:
+  guides:
+    output: true
+    permalink: "/:name/"
+  adr:
+    output: true
+    permalink: "/adr/:name/"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+
+jekyll_vitepress:
+  branding:
+    site_title: "Grupo 12"
+    logo:
+      default: /assets/images/kodigo_logo.png
+      light: /assets/images/kodigo_logo.png
+      dark: /assets/images/kodigo_logo_dark.png
+      alt: "Kodigo"
+      width: 96
+      height: 24
+  labels:
+    appearance_menu: "Apariencia"
+    switch_to_dark: "Cambiar a modo oscuro"
+  syntax:
+    light_theme: github
+    dark_theme: github.dark
+  seo:
+    enabled: true
+    page_type: WebPage
+    image:
+      path: /assets/images/kodigo_avatar.png
+      alt: "Kodigo — Grupo 12"
+      width: 1024
+      height: 1024

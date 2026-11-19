@@ -1,0 +1,10 @@
+- title: Proyecto
+  url: /proyecto/
+  collections: [guides]
+
+- title: ADRs
+  url: /adr/indice/
+  collections: [adr]
+
+- title: Monorepo
+  url: https://github.com/kodigo-grupo-12/monorepo

@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+gem "jekyll-vitepress-theme"
+gem "webrick", "~> 1.8"
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
+gem "erb"

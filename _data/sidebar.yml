@@ -1,0 +1,5 @@
+- title: Proyecto
+  collection: guides
+
+- title: Arquitectura (ADR)
+  collection: adr

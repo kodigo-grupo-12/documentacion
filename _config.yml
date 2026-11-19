@@ -28,6 +28,7 @@ defaults:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - mise.toml
   - README.md
   - vendor/
 

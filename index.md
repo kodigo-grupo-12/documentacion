@@ -70,23 +70,3 @@ features:
     <dd>Domingo, 29 de noviembre de 2026 — 23:59</dd>
   </div>
 </dl>
-
-<section class="home-status" aria-labelledby="home-status-heading">
-  <div class="home-status-header">
-    <h2 id="home-status-heading" class="home-status-title">Estado actual de la documentación</h2>
-  </div>
-  <ul class="home-status-list">
-    <li>
-      <span class="home-status-badge">ADR-0000</span>
-      <a href="{{ '/adr/0000-plantilla-adr/' | relative_url }}">Plantilla de ADR</a>
-      <span>Estado: Plantilla</span>
-      <span class="home-status-date">2026-11-19</span>
-    </li>
-    <li>
-      <span class="home-status-badge">Propuesta</span>
-      <a href="{{ '/propuesta/01-introduccion/' | relative_url }}">5 secciones base en <code>_propuesta/</code></a>
-      <span>Listas para redacción</span>
-      <span class="home-status-date">2026-11-19</span>
-    </li>
-  </ul>
-</section>

@@ -33,6 +33,8 @@ exclude:
   - Gemfile.lock
   - mise.toml
   - README.md
+  - Makefile
+  - make
   - vendor/
 
 jekyll_vitepress:

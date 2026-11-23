@@ -5,14 +5,13 @@ Sitio de documentación técnica y registros de decisiones de arquitectura (ADRs
 ## Desarrollo local
 
 ```bash
-bundle install
-bundle exec jekyll serve --livereload
+make setup
+make build
+make clean
 ```
 
-El sitio estará disponible en `http://localhost:4000/documentacion/`.
+`make setup` instala el Ruby 3.4 que fija el repositorio y después las gemas. Si `mise` no está, el comando lo dice y sigue con el Ruby del sistema.
 
-## Compilación
+`make build` genera el sitio. `make clean` borra esa salida y la caché.
 
-```bash
-bundle exec jekyll build
-```
+`make` sin argumentos muestra la ayuda y no compila.

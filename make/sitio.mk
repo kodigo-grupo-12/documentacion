@@ -13,6 +13,32 @@ cierre := \033[0m
 
 SITIO_ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 
+define con_bundle
+cd "$(SITIO_ROOT)"; \
+if command -v mise >/dev/null 2>&1; then \
+  if ! mise exec -- $(1); then \
+    printf "$(rojo)  ✗ $(2)$(cierre)\n"; \
+    exit 1; \
+  fi; \
+else \
+  if ! command -v bundle >/dev/null 2>&1; then \
+    printf "$(rojo)  ✗ bundle no está en el Ruby del sistema$(cierre)\n"; \
+    exit 1; \
+  fi; \
+  if ! $(1); then \
+    printf "$(rojo)  ✗ $(2)$(cierre)\n"; \
+    exit 1; \
+  fi; \
+fi
+endef
+
+define fin
+printf "\n$(verde)  ✓ done$(cierre)\n"; \
+printf "\n$(amarillo)📋 Quick Actions:$(cierre)\n"; \
+printf "$(tenue)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"; \
+$(1)
+endef
+
 .PHONY: help setup build clean
 
 help:
@@ -22,12 +48,7 @@ help:
 	@printf "  make setup                Instala el Ruby 3.4 del repositorio y las gemas\n"
 	@printf "  make build                Genera el sitio\n"
 	@printf "  make clean                Borra la salida y la caché\n"
-	@printf "\n$(verde)  ✓ done$(cierre)\n"
-	@printf "\n$(amarillo)📋 Quick Actions:$(cierre)\n"
-	@printf "$(tenue)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"
-	@printf "  • instalar el entorno: $(azul)make setup$(cierre)\n"
-	@printf "  • generar el sitio: $(azul)make build$(cierre)\n"
-	@printf "  • borrar la salida: $(azul)make clean$(cierre)\n\n"
+	@$(call fin,printf "  • instalar el entorno: $(azul)make setup$(cierre)\n"; printf "  • generar el sitio: $(azul)make build$(cierre)\n"; printf "  • borrar la salida: $(azul)make clean$(cierre)\n\n")
 
 setup:
 	@printf "\n$(cian)📚 setup · instalando Ruby y gemas$(cierre)\n"
@@ -35,63 +56,31 @@ setup:
 	@set -euo pipefail; \
 	cd "$(SITIO_ROOT)"; \
 	if command -v mise >/dev/null 2>&1; then \
-	  mise install ruby; \
-	  if ! mise exec -- bundle install; then \
-	    printf "$(rojo)  ✗ no se pudieron instalar las gemas$(cierre)\n"; \
+	  if ! mise install ruby; then \
+	    printf "$(rojo)  ✗ no se pudo instalar el Ruby 3.4$(cierre)\n"; \
 	    exit 1; \
 	  fi; \
 	else \
 	  printf "$(amarillo)mise no está instalado. Se sigue con el Ruby del sistema.$(cierre)\n"; \
-	  if ! command -v bundle >/dev/null 2>&1; then \
-	    printf "$(rojo)  ✗ bundle no está en el Ruby del sistema$(cierre)\n"; \
-	    exit 1; \
-	  fi; \
-	  if ! bundle install; then \
-	    printf "$(rojo)  ✗ no se pudieron instalar las gemas$(cierre)\n"; \
-	    exit 1; \
-	  fi; \
-	fi
-	@printf "\n$(verde)  ✓ done$(cierre)\n"
-	@printf "\n$(amarillo)📋 Quick Actions:$(cierre)\n"
-	@printf "$(tenue)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"
-	@printf "  • generar el sitio: $(azul)make build$(cierre)\n\n"
+	fi; \
+	$(call con_bundle,bundle install,no se pudieron instalar las gemas); \
+	$(call fin,printf "  • generar el sitio: $(azul)make build$(cierre)\n\n")
 
 build:
 	@printf "\n$(cian)📚 build · generando el sitio$(cierre)\n"
 	@printf "$(cian)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"
 	@set -euo pipefail; \
-	cd "$(SITIO_ROOT)"; \
-	if command -v mise >/dev/null 2>&1; then \
-	  if ! mise exec -- bundle exec jekyll build; then \
-	    printf "$(rojo)  ✗ no se pudo generar el sitio$(cierre)\n"; \
-	    exit 1; \
-	  fi; \
-	else \
-	  if ! command -v bundle >/dev/null 2>&1; then \
-	    printf "$(rojo)  ✗ bundle no está en el Ruby del sistema$(cierre)\n"; \
-	    exit 1; \
-	  fi; \
-	  if ! bundle exec jekyll build; then \
-	    printf "$(rojo)  ✗ no se pudo generar el sitio$(cierre)\n"; \
-	    exit 1; \
-	  fi; \
-	fi; \
-	if [[ ! -d _site ]]; then \
+	$(call con_bundle,bundle exec jekyll build,no se pudo generar el sitio); \
+	if [[ ! -d "$(SITIO_ROOT)/_site" ]]; then \
 	  printf "$(rojo)  ✗ la salida _site no quedó generada$(cierre)\n"; \
 	  exit 1; \
-	fi
-	@printf "\n$(verde)  ✓ done$(cierre)\n"
-	@printf "\n$(amarillo)📋 Quick Actions:$(cierre)\n"
-	@printf "$(tenue)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"
-	@printf "  • borrar la salida: $(azul)make clean$(cierre)\n\n"
+	fi; \
+	$(call fin,printf "  • borrar la salida: $(azul)make clean$(cierre)\n\n")
 
 clean:
 	@printf "\n$(cian)📚 clean · borrando la salida y la caché$(cierre)\n"
 	@printf "$(cian)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"
 	@set -euo pipefail; \
 	cd "$(SITIO_ROOT)"; \
-	rm -rf _site .jekyll-cache .sass-cache .jekyll-metadata
-	@printf "\n$(verde)  ✓ done$(cierre)\n"
-	@printf "\n$(amarillo)📋 Quick Actions:$(cierre)\n"
-	@printf "$(tenue)────────────────────────────────────────────────────────────────────────────────$(cierre)\n"
-	@printf "  • generar el sitio de nuevo: $(azul)make build$(cierre)\n\n"
+	rm -rf _site .jekyll-cache .sass-cache .jekyll-metadata; \
+	$(call fin,printf "  • generar el sitio de nuevo: $(azul)make build$(cierre)\n\n")

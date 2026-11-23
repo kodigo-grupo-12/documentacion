@@ -91,11 +91,7 @@ serve:
 	  exit 1; \
 	fi; \
 	printf "  http://localhost:$$puerto/documentacion/\n"; \
-	cd "$(SITIO_ROOT)"; \
-	if ! $(call correr,bundle exec jekyll serve --livereload --host 127.0.0.1 --port "$$puerto"); then \
-	  printf "$(rojo)  ✗ no se pudo servir el sitio$(cierre)\n"; \
-	  exit 1; \
-	fi; \
+	$(call con_bundle,bundle exec jekyll serve --livereload --host 127.0.0.1 --port "$$puerto",no se pudo servir el sitio); \
 	$(call fin,printf "  • generar el sitio: $(azul)make build$(cierre)\n\n")
 
 build:

@@ -6,6 +6,10 @@
   url: /propuesta/01-introduccion/
   collections: [propuesta]
 
+- title: PRD
+  url: /prd/prd-finanzas-personales/
+  collections: [prd]
+
 - title: ADRs
   url: /adr/indice/
   collections: [adr]

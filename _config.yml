@@ -18,6 +18,9 @@ collections:
   adr:
     output: true
     permalink: "/adr/:name/"
+  prd:
+    output: true
+    permalink: "/prd/:name/"
 
 defaults:
   - scope:

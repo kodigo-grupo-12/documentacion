@@ -4,5 +4,8 @@
 - title: Propuesta del Proyecto
   collection: propuesta
 
+- title: PRD
+  collection: prd
+
 - title: Arquitectura (ADR)
   collection: adr

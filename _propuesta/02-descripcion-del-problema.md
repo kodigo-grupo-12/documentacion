@@ -12,7 +12,7 @@ El dominio de esta entrega son las finanzas personales cotidianas. Una persona r
 
 Con ese registro, la persona consulta su saldo, que se calcula al mostrarse como la suma de los ingresos menos la suma de los gastos y no se guarda en ninguna parte. Esa cifra al día es la base para tomar decisiones diarias: saber qué entra, qué sale y dónde ajustar antes de que el mes se le pase.
 
-La entrega es una demo con una sola aplicación Expo para Android y web, sobre una cuenta de demostración, sin integración con bancos ni soporte para varias personas.
+La entrega es una demo con una sola aplicación Expo para Android y web (llamada provisionalmente Cuéntame en esta etapa), sobre una cuenta de demostración, sin integración con bancos ni soporte para varias personas.
 
 ## 2.2 ¿Cuál es el problema por solucionar?
 
